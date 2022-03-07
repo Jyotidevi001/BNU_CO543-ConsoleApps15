@@ -16,6 +16,7 @@ namespace ConsoleAppProject.Helpers
     /// </summary>
     public static class ConsoleHelper
     {
+        public static object author { get; private set; }
 
         /// <summary>
         /// This method displays a list of numbered choices to the
@@ -34,6 +35,8 @@ namespace ConsoleAppProject.Helpers
                                             1, choices.Length);
             return choiceNo;
         }
+
+       
 
         /// <summary>
         /// This displays all the available choices in a numbered
@@ -119,13 +122,13 @@ namespace ConsoleAppProject.Helpers
         /// inform the use which units are being converted
         /// Please change the authors name.
         /// </summary>
-        public static void OutputHeading(string heading)
+        public static void OutputHeading(string heading, string author)
         {
             Console.ForegroundColor = ConsoleColor.Green;
 
             Console.WriteLine("\n ---------------------------------");
             Console.WriteLine($"    {heading}          ");
-            Console.WriteLine("     by Derek Peacock           ");
+            Console.WriteLine($"     by {author}           ");
             Console.WriteLine(" ---------------------------------" +
                 "\n");
 
