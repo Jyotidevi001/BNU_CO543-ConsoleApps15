@@ -1,10 +1,15 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+
 namespace ConsoleAPppTest
 {
     [TestClass]
-    public class UnitTest1
+    public class App01Test
     {
+        public App01Test()
+        {
+        }
+
         [TestMethod]
         public void TestMethod1()
         {

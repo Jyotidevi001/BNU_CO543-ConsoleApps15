@@ -11,7 +11,7 @@ namespace ConsoleAppProject
     /// to start App01 to App05 for CO453 CW1
     /// 
     /// This Project has been modified by:
-    /// Jyoti  05/02/2022
+    /// Jyoti  20/03/2022
     /// </summary>
     public static class Program
     {
@@ -25,22 +25,54 @@ namespace ConsoleAppProject
 
         public static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
 
-            Console.WriteLine();
-            Console.WriteLine(" =================================================");
-            Console.WriteLine("    BNU CO453 Applications Programming 2021-2022! ");
-            Console.WriteLine("                     by Jyoti                     ");
-            Console.WriteLine(" =================================================");
-            Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine(" =================================================");
+                Console.WriteLine("    BNU CO453 Applications Programming 2021-2022! ");
+                Console.WriteLine("                     by Jyoti                     ");
+                Console.WriteLine(" =================================================");
+                Console.WriteLine();
 
-            DistanceConverter app01 = new DistanceConverter();
-            app01.Run();
-            Console.ForegroundColor = ConsoleColor.Blue;
+                //Distance Converter = new distance converter();
+                //Converter.ConvertDistance();
+
+                //BMI calculate = new BMI();
+                //Calculator.Run();
+
+                //StudentGrades grades = new StudentGrades();
+                //grades.Run();
+
+                string[] choices =
+                {
+                "App01 Distance Converter",
+                "App02 BMI Calculator",
+                "App03 Students Grades"
+                };
+                Console.WriteLine("Please Choose Your App\n ");
+
+                int choice = ConsoleHelper.SelectChoice(choices);
+
+                switch (choice)
+                {
+                    case 1:
+                        DistanceConverter app01 = new DistanceConverter();
+                        app01.Run();
+                        break;
+                    case 2:
+                        BMI calculator = new BMI();
+                        calculator.Run();
+                        break;
+                    case 3:
+                        StudentGrades app03 = new StudentGrades();
+                        app03.Run();
+                        break;
 
 
+                }
 
-            
+            }
         }
     }
 }

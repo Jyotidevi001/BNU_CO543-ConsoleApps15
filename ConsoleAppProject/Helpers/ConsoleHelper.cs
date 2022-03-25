@@ -11,12 +11,11 @@ namespace ConsoleAppProject.Helpers
     /// There are methods for outputting a main heading
     /// and a title.
     /// <author>
-    /// Derek Peacock 2021
+    /// Jyoti 2022
     /// </author>
     /// </summary>
     public static class ConsoleHelper
-    {
-        public static object author { get; private set; }
+    { 
 
         /// <summary>
         /// This method displays a list of numbered choices to the
@@ -31,12 +30,10 @@ namespace ConsoleAppProject.Helpers
 
             // Get the user's choice
 
-            int choiceNo = (int)InputNumber("\n Please enter your choice > ", 
+            int choiceNo = (int)InputNumber("\n Please enter your choice > ",
                                             1, choices.Length);
             return choiceNo;
         }
-
-       
 
         /// <summary>
         /// This displays all the available choices in a numbered
@@ -85,11 +82,15 @@ namespace ConsoleAppProject.Helpers
             return number;
         }
 
+        internal static void OutputHeading(string v)
+        {
+            throw new NotImplementedException();
+        }
+
 
         /// <summary>
         /// This method will prompt the user to enter a number
         /// between the min and max values includice.
-        /// 
         /// Error messages will be displayed for an invalid number
         /// or a number outside the min or max values.
         /// The number returned can be cast as an (int/decimal)
@@ -127,8 +128,8 @@ namespace ConsoleAppProject.Helpers
             Console.ForegroundColor = ConsoleColor.Green;
 
             Console.WriteLine("\n ---------------------------------");
-            Console.WriteLine($"    {heading}          ");
-            Console.WriteLine($"     by {author}           ");
+            Console.WriteLine($"        {heading}                      ");
+            Console.WriteLine($"       by {author}                  ");
             Console.WriteLine(" ---------------------------------" +
                 "\n");
 
@@ -146,7 +147,7 @@ namespace ConsoleAppProject.Helpers
             Console.WriteLine($"\n {title}");
             Console.Write(" ");
 
-            for(int count = 0; count <= title.Length; count++)
+            for (int count = 0; count <= title.Length; count++)
             {
                 Console.Write("-");
             }

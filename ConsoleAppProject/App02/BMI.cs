@@ -1,4 +1,6 @@
-﻿namespace ConsoleAppProject.App02
+﻿using System;
+
+namespace ConsoleAppProject.App02
 {
     /// <summary>
     /// Please describe the main features of this App
@@ -8,5 +10,9 @@
     /// </author>
     public class BMI
     {
+        internal void Run()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
