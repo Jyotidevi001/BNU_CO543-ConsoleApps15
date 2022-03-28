@@ -20,22 +20,27 @@ namespace ConsoleAppProject.App04
         public void Run()
         {
             Console.WriteLine(" App04 my NewsApp");
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            int choice = ConsoleHelper.SelectChoice(choices);
-
-            switch (choice)
+            bool quit = false;
+            while (quit == false)
             {
-                case 1: AddMessage();break;
-                case 2: AddPhoto(); break;
-                case 3: PrintPosts(); break;
-                case 4: break; // quit
-            }
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                int choice = ConsoleHelper.SelectChoice(choices);
 
+                switch (choice)
+                {
+                    case 1: AddMessage(); break;
+                    case 2: AddPhoto(); break;
+                    case 3: PrintPosts(); break;
+                    case 4: quit = true; break ; // quit
+                }
+            }
+           
         }
 
         private void PrintPosts()
         {
-            throw new NotImplementedException();
+            NewsList.Display();
+             
         }
 
         private void AddPhoto()
@@ -45,7 +50,22 @@ namespace ConsoleAppProject.App04
 
         private void AddMessage()
         {
-            throw new NotImplementedException();
+            string name = EnterAuthor();
+
+            Console.Write("please enter your message >");
+            string message = Console.ReadLine();
+
+            MessagePost post = new MessagePost(name, message);
+            NewsList.AddPost(post);
+
+
+        }
+
+        private static string EnterAuthor()
+        {
+            Console.Write(" please enter your name >");
+            string name = Console.ReadLine();
+            return name;
         }
     }
 }
