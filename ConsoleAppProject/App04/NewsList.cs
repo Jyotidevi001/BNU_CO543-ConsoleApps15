@@ -18,7 +18,7 @@ namespace ConsoleAppProject.App04
     ///  Michael Kölling and David J. Barnes
     ///  version 0.1
     ///</author> 
-    public class NewsFeed
+    public class NewsList
     {
         private readonly List<MessagePost> messages;
         private readonly List<PhotoPost> photos;
@@ -26,7 +26,7 @@ namespace ConsoleAppProject.App04
         ///<summary>
         /// Construct an empty news feed.
         ///</summary>
-        public NewsFeed()
+        public NewsList()
         {
             messages = new List<MessagePost>();
             photos = new List<PhotoPost>();
