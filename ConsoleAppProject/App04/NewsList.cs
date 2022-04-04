@@ -59,6 +59,26 @@ namespace ConsoleAppProject.App04
 
            
         }
+
+        internal void LikePost(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void UnlikePost(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void AddCommentToPost(int id, object comment)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void RemovePost(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
