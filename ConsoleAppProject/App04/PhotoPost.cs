@@ -39,17 +39,19 @@ namespace ConsoleAppProject.App04
             this.Caption = caption;
         }
 
-
-    
-        ///<summary>
-        /// Display the details of this post.
-        /// 
-        /// (Currently: Print to the text terminal. This is simulating display 
-        /// in a web browser for now.)
-        ///</summary>
-        public void Display()
+        public override void Display()
         {
+            Console.WriteLine();
+            Console.WriteLine($"Filename: { Filename}");
+            Console.WriteLine();
+            Console.WriteLine($" Caption : {Caption}");
+            Console.WriteLine();
+            base.Display();
         }
+
+
+
+       
 
 
         

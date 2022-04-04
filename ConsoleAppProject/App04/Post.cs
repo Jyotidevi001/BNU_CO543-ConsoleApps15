@@ -14,6 +14,7 @@ namespace ConsoleAppProject.App04
         public String Author { get; }
 
         public DateTime Timestamp { get; }
+        public int PostID { get; internal set; }
 
         public Post(string author)
         {

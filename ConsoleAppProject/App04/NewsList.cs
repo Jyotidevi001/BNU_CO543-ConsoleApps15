@@ -21,8 +21,7 @@ namespace ConsoleAppProject.App04
     public class NewsList
     {
         public List<Post> PostList { get; set; }
-
-
+       private readonly List<Post> posts;
 
         ///<summary>
         /// Construct an empty news feed.
@@ -35,19 +34,71 @@ namespace ConsoleAppProject.App04
 
 
         ///<summary>
-        /// Add a text post to the news feed.
+        /// Add a text photo to the news list.
         /// 
-        /// @param text  The text post to be added.
+        /// @param text  The photo post to be added.
         ///</summary>
-        public void AddPost(Post post)
+        public void AddPhotoPost(PhotoPost photo)
         {
-            PostList.Add(post);
+            posts.Add(photo);
         }
 
+        public void AddMessagePost(MessagePost message)
+        {
+            posts.Add(message);
+        }
+        public void LikePost(int id)
+        {
+            Post post = FindPost(id);
+            post.Like();
+        }
+
+        public void UnlikePost(int id)
+        {
+            Post post = FindPost(id);
+            post.Unlike();
+
+        }
+
+        public void AddCommentToPost(int id, string comment)
+        {
+           Post post = FindPost(id);
+            post.AddComment(comment);
+        }
+
+        public void RemovePost(int id)
+        {
+            Post post = FindPost(id);
+
+            if (post == null)
+            {
+                Console.WriteLine($"\n post with ID: {id} does not exit");
+
+            }
+            else
+            {
+                Console.WriteLine($"\n The following post {id} has been removed ");
+                posts.Remove(post);
+            }
+        }
+
+        private Post FindPost(int id)
+        {
+            foreach( Post post in posts)
+            {
+                if (post.PostID == id)
+                { 
+                    return post;
+                }
+            }
+            return null;
+        }
         ///<summary>
         /// Show the news feed. Currently: print the news feed details to the
         /// terminal. (To do: replace this later with display in web browser.)
         ///</summary>
+
+
         public void Display()
         {
             // display all text posts
@@ -60,25 +111,7 @@ namespace ConsoleAppProject.App04
            
         }
 
-        internal void LikePost(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void UnlikePost(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void AddCommentToPost(int id, object comment)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void RemovePost(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 
 }
