@@ -94,7 +94,7 @@ namespace ConsoleAppProject.App04
             Console.WriteLine("\nEnter the photo caption:");
             string caption = Console.ReadLine();
             PhotoPost photopost = new PhotoPost(name, filename, caption);
-            NewsList.AddPost(photopost);
+            NewsList.AddPhotoPost(photopost);
         }
 
         private void AddMessage()
@@ -105,7 +105,7 @@ namespace ConsoleAppProject.App04
             string message = Console.ReadLine();
 
             MessagePost post = new MessagePost(name, message);
-            NewsList.AddPost(post);
+            NewsList.AddMessagePost(post);
 
 
         }
